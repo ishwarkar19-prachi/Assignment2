@@ -1,410 +1,97 @@
-/* 1. Reset & Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth; /* Makes clicking links scroll smoothly */
+/* PAGE HEIGHT FIT */
+
+body{
+height:100vh;
+display:flex;
+flex-direction:column;
 }
 
-section, header {
-    scroll-margin-top: 80px; /* Prevents sections from hiding under the navbar */
+/* NAVBAR */
+
+.navbar{
+height:10vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 50px;
+border-bottom:1px solid #eee;
 }
 
-/* 2. Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
-    background: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #334155;
+.nav-links a{
+text-decoration:none;
+color:#444;
+font-size:16px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.username{
+color:#3aa0ff;
+font-weight:bold;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #64748b;
-    font-weight: 500;
-    transition: 0.3s;
+/* HERO SECTION */
+
+.hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 80px;
 }
 
-.nav-links a:hover {
-    color: #38bdf8;
+/* LEFT SIDE */
+
+.hero-left{
+width:50%;
 }
 
-.nav-links .btn-username {
-    background-color: #334155;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
+.hero-left h1{
+font-size:48px;
+line-height:1.2;
+color:#444;
+margin-bottom:20px;
 }
 
-.nav-links .btn-username:hover {
-    background-color: #38bdf8;
-    color: white;
+.hero-left span{
+color:#3aa0ff;
 }
 
-/* 3. Hero Section */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 80px;
-    min-height: 85vh;
+.hero-left p{
+color:#777;
+margin-bottom:30px;
+font-size:16px;
 }
 
-.hero-content {
-    flex: 1;
-    max-width: 600px;
+.hero-left button{
+padding:14px 30px;
+background:#3aa0ff;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
 }
 
-.hero-content h1 {
-    font-size: 48px;
-    color: #334155;
-    line-height: 1.2;
-    margin-bottom: 20px;
+/* RIGHT SIDE */
+
+.hero-right{
+width:50%;
+display:flex;
+justify-content:center;
 }
 
-.hero-content span {
-    color: #38bdf8;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #94a3b8;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.cta-button {
-    background-color: #38bdf8;
-    color: white;
-    border: none;
-    padding: 15px 35px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #0ea5e9;
-    transform: scale(1.05);
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.hero-image img {
-    max-width: 100%;
-}
-
-/* 4. Services Section */
-/* Center the Header text */
-.services-header {
-    text-align: center;
-    margin-bottom: 50px; /* Space between header and the cards */
-}
-
-.services-header h2 {
-    font-size: 36px;
-    color: #334155;
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block; /* Allows us to style a line relative to text width if needed */
-}
-
-.services-header p {
-    font-size: 18px;
-    color: #64748b;
-    max-width: 600px;
-    margin: 0 auto; /* This centers the paragraph itself if it wraps to two lines */
-}
-
-/* The Grid remains 3 columns */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Styling for the cards to match the clean look */
-.service-card {
-    background: wheat;
-    padding: 35px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(56, 189, 248, 0.1);
-}
-
-/* 5. About Us Section */
-/* About Us Styling */
-/* Center the About Header */
-.about-header {
-    text-align: center; /* This centers the span and h2 */
-    margin-bottom: 30px;
-}
-
-/* Match the Services Sub-heading (the small blue text) */
-.about-content .sub-heading {
-    color: #38bdf8;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 35px;
-    display: block; /* Ensures it sits on its own line */
-    margin-bottom: 10px;
-}
-
-/* Match the Services H2 Font */
-.about-content h2 {
-    font-size: 36px;         /* Same as your .services-header h2 */
-    color: #334155;         /* Same dark slate color */
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-/* Ensure the paragraphs are also centered to match the 'Header' feel */
-.about-content .main-text, 
-.about-content .secondary-text {
-    text-align: center;
-    max-width: 800px;       /* Keeps text from stretching too wide */
-    margin: 0 auto 15px;    /* Centers the block itself */
-}
-
-/* Center the button as well */
-.about-content {
-    text-align: center; 
-}
-.about-us {
-    padding: 100px 80px;
-    background-color: white;
-}
-
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 15px 15px 0px #f0f9ff; /* Subtle blue offset background */
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about-content h2 {
-    font-size: 38px;
-    color: #334155;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.about-content p {
-    color: #64748b;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.about-content p strong {
-    color: #38bdf8;
-}
-
-/* Feature Bar Styling */
-.about-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 25px 0;
-    padding: 15px;
-    background: #f8fafc;
-    border-radius: 12px;
-    border-left: 5px solid #38bdf8;
-}
-
-.about-highlights span {
-    font-size: 14px;
-    font-weight: 600;
-    color: #475569;
-}
-
-/* Enquire Now Button */
-.enquire-btn {
-    display: inline-block;      /* Required for <a> tags to act like buttons */
-    text-decoration: none;      /* Removes the default link underline */
-    background-color: #334155;  /* Elegant Dark Gray */
-    color: white;
-    padding: 14px 35px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-.enquire-btn:hover {
-    background-color: #38bdf8;  /* Brand Blue */
-    color: white;               /* Keeps text white on hover */
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
-}
-/* Contact Section Styling */
-.contact-section {
-    padding: 80px;
-    background-color: #f8fafc;
-    text-align: center;
-}
-
-.contact-header {
-    margin-bottom: 40px;
-}
-
-.contact-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Horizontal Form Alignment */
-.horizontal-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Allows it to stack on mobile */
-    margin-bottom: 30px;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.input-group label {
-    font-weight: 600;
-    color: #334155;
-    font-size: 16px;
-}
-
-.input-group input {
-    padding: 10px 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px; /* Matching the rounded style */
-    outline: none;
-    transition: 0.3s;
-}
-
-.input-group input:focus {
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
-}
-
-/* Submit Button Style */
-.horizontal-form .submit-btn {
-    background-color: #38bdf8;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.horizontal-form .submit-btn:hover {
-    background-color: #0ea5e9;
-    transform: translateY(-2px);
-}
-
-/* Email Styling */
-.contact-email {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #334155;
-}
-
-.contact-email a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.contact-email a:hover {
-    text-decoration: underline;
-}
-/* Styling the "Get In Touch" sub-heading */
-.contact-header .sub-heading {
-    color: #38bdf8;          /* Bright Blue from your Hero section */
-    font-size: 20px;         /* Increased size (was 14px) */
-    font-weight: 700;        /* Bold weight */
-    text-transform: uppercase;
-    letter-spacing: 2px;     /* Adds a premium, spaced-out look */
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Styling the main "Contact Us" heading */
-.contact-header h2 {
-    font-size: 42px;         /* Larger font size for the main title */
-    color: #334155;         /* Dark Slate Gray */
-    margin-bottom: 40px;
-    font-weight: 800;
-}
-
-/* Update the horizontal form labels to match the new size */
-.input-group label {
-    font-weight: 600;
-    color: #475569;
-    font-size: 18px;         /* Slightly larger labels for readability */
-}
-
-/* Make the contact email stand out more */
-.contact-email p {
-    font-size: 20px;
-    font-weight: 500;
-    color: #334155;
-    margin-top: 30px;
+.hero-right img{
+width:350px;
 }
